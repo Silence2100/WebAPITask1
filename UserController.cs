@@ -39,7 +39,7 @@
             return Ok(user);
         }
 
-        [HttpPut("id")]
+        [HttpPut("{id}")]
         public ActionResult<User> UpdateUserName(int id, [FromBody] string newName)
         {
             var user = FindUserById(id);
@@ -54,7 +54,7 @@
             return Ok(user);
         }
 
-        [HttpDelete("id")]
+        [HttpDelete("{id}")]
         public IActionResult DeleteUser(int id)
         {
             var user = FindUserById(id);
